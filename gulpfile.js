@@ -20,7 +20,7 @@ gulp.task('default', ['copy-html','copy-images', 'styles'], function () {
   gulp.watch('./index.html',['copy-html']);
 
   browserSync.init({
-    server: "./"
+    server: "./dist"
   });
 });
 
