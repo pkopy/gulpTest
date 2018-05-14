@@ -11,13 +11,13 @@ gulp.task('styles', function () {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 });
  
-gulp.task('default', function () {
+gulp.task('default', ['copy-html','copy-images', 'styles'], function () {
   gulp.watch('./sass/**/*.scss', ['styles']);
-  gulp.watch('./*.html').on('change', browserSync.reload)
+  gulp.watch('./index.html',['copy-html']);
 
   browserSync.init({
     server: "./"
@@ -30,4 +30,14 @@ gulp.task('tests', function () {
 			integration: true,
 			vendor: 'js/**/*.js'
 		}));
+});
+
+gulp.task('copy-html', function() {
+	gulp.src('./index.html')
+		.pipe(gulp.dest('./dist'));
+});
+
+gulp.task('copy-images', function() {
+	gulp.src('img/*')
+		.pipe(gulp.dest('dist/img'));
 });
