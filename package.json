@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/pkopy/gulpTest#readme",
   "devDependencies": {
+    "browser-sync": "^2.24.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-jasmine-phantom": "^3.0.0",
     "gulp-sass": "^4.0.1"
-  }
+  },
+  "dependencies": {}
 }
