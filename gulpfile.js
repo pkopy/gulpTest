@@ -17,7 +17,7 @@ gulp.task('styles', function () {
  
 gulp.task('default', ['copy-html','copy-images', 'styles'], function () {
   gulp.watch('./sass/**/*.scss', ['styles']);
-  gulp.watch('./index.html',['copy-html']);
+  gulp.watch('./*.html',['copy-html']);
 
   browserSync.init({
     server: "./dist"
@@ -33,8 +33,9 @@ gulp.task('tests', function () {
 });
 
 gulp.task('copy-html', function() {
-	gulp.src('./index.html')
-		.pipe(gulp.dest('./dist'));
+	gulp.src('./*.html')
+    .pipe(gulp.dest('./dist'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('copy-images', function() {
