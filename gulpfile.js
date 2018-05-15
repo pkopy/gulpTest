@@ -6,7 +6,9 @@ var jasmine = require('gulp-jasmine-phantom');
  
 gulp.task('styles', function () {
   return gulp.src('./sass/**/*.scss')
-    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(sass({
+			outputStyle: 'compressed'
+		}).on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
