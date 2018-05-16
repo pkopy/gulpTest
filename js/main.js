@@ -4,3 +4,7 @@
 	return foo;
 
 })();
+
+function add(a,b) {
+	return a+b;
+}

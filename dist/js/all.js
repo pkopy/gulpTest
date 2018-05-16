@@ -1,1 +1,1 @@
-function getWindowHeight(){return window.innerHeight}getWindowHeight();
+function getWindowHeight(){return window.innerHeight}function add(n,i){return n+i}getWindowHeight();

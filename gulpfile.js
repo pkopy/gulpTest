@@ -26,7 +26,6 @@ gulp.task('dist', [
 	'copy-html',
 	'copy-images',
 	'styles',
-	'lint',
 	'scripts-dist'
 ]);
  
@@ -48,7 +47,7 @@ gulp.task('scripts', function() {
 
 gulp.task('scripts-dist', function() {
   gulp.src('js/**/*.js')
-  .pipe(sourcemaps.init())
+  
     .pipe(babel())
     .pipe(concat('all.js'))
 		.pipe(uglify())
